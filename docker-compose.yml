@@ -2,8 +2,7 @@ services:
   mendix-claude-proxy:
     build: .
     container_name: mendix-claude-proxy
-    ports:
-      - "3000:3000"
+    network_mode: host
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     restart: unless-stopped
